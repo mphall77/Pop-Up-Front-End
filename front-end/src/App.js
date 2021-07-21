@@ -1,26 +1,27 @@
+import { Switch, Route } from "react-router-dom";
+
+//components
+import NavBar from "./Components/NavBar";
+
+//pages
+import Home from "./Pages/Home";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { apiURL } from "./util/apiURL.js";
-const API = apiURL();
+
+// import { apiURL } from "./util/apiURL.js";
+// const API = apiURL();
+import "./app.css";
 
 function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => setDays(response.data),
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
   return (
     <div>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }
