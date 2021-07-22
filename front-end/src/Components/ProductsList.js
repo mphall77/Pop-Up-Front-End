@@ -26,13 +26,13 @@ const ProductsList = () => {
 				<table class="table table-striped">
 					<thead scope="row">
 						<tr>
-							<th>Name</th>
-							<th>Photo</th>
-							<th>Description</th>
-							<th>Price</th>
+							<th scope="col">Name</th>
+							<th scope="col">Photo</th>
+							<th scope="col">Description</th>
+							<th scope="col">Price</th>
 						</tr>
 					</thead>
-					<tbody scope="row">
+					<tbody>
 						{products.map((product) => {
 							return <ProductListItem key={product.id} product={product} />;
 						})}
