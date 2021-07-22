@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar";
 //pages
 import Home from "./Pages/Home";
 import Show from "./Pages/Show";
+import Index from "./Pages/Index";
 
 // import { apiURL } from "./util/apiURL.js";
 // const API = apiURL();
@@ -21,9 +22,9 @@ function App() {
 				<Route exact path="/">
 					<Home />
 				</Route>
-				{/* <Route exact path="/products">
-          <Index />
-        </Route> */}
+				<Route exact path="/products">
+					<Index />
+				</Route>
 				<Route exact path="/products/:id">
 					<Show />
 				</Route>
