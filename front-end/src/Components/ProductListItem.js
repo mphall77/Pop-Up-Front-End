@@ -8,7 +8,6 @@ const ProductListItem = ({ product }) => {
 					{product.name}
 				</Link>
 			</td>
-
 			<td>
 				<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
 					{product.photo}
