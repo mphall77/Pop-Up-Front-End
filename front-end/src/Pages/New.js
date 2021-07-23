@@ -1,10 +1,9 @@
-import React from "react";
+import NewProductForm from "../Components/ProductNewForm";
 
 const New = () => {
 	return (
 		<div>
-			<h2>New</h2>
-			{/* <NewProduct.js /> */}
+			<NewProductForm />
 		</div>
 	);
 };

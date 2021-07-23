@@ -11,6 +11,7 @@ import Home from "./Pages/Home";
 import Show from "./Pages/Show";
 import Index from "./Pages/Index";
 import Edit from "./Pages/Edit";
+import New from "./Pages/New";
 
 // import { apiURL } from "./util/apiURL.js";
 // const API = apiURL();
@@ -26,12 +27,12 @@ function App() {
 				<Route exact path="/products">
 					<Index />
 				</Route>
+				<Route exact path="/products/new">
+					<New />
+				</Route>
 				<Route exact path="/products/:id">
 					<Show />
 				</Route>
-				{/* <Route exact path="/products/new">
-					<New />
-				</Route> */}
 				<Route exact path="/products/:id/edit">
 					<Edit />
 				</Route>
