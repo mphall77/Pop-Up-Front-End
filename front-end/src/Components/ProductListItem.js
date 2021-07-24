@@ -8,7 +8,9 @@ const ProductListItem = ({ product }) => {
 					{product.name}
 				</Link>
 			</td>
-			<td>{product.photo}</td>
+			<td>
+				<img src={product.photo} alt="sneakers" />
+			</td>
 			<td>{product.description}</td>
 			<td>${product.price}</td>
 		</tr>
