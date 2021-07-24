@@ -8,21 +8,9 @@ const ProductListItem = ({ product }) => {
 					{product.name}
 				</Link>
 			</td>
-			<td>
-				<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
-					{product.photo}
-				</Link>
-			</td>
-			<td>
-				<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
-					{product.description}
-				</Link>
-			</td>
-			<td>
-				<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
-					{product.price}
-				</Link>
-			</td>
+			<td>{product.photo}</td>
+			<td>{product.description}</td>
+			<td>${product.price}</td>
 		</tr>
 	);
 };
