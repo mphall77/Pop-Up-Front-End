@@ -21,42 +21,72 @@ const ProductDetails = () => {
 	};
 	const deleteProduct = async () => {
 		try {
-		  await axios.delete(`${API}/products/${id}`);
+			await axios.delete(`${API}/products/${id}`);
 		} catch (err) {
-		  console.log(err)
+			console.log(err);
 		}
-	  };
+	};
 
 	useEffect(() => {
 		fetchProduct();
 	}, [id]);
 
-	
-
-	  const handleDelete = () => {
+	const handleDelete = () => {
 		deleteProduct();
-		history.push('/products')
-		
-	  } 
+		history.push("/products");
+	};
 
 	const editProductURL = `/products/${id}/edit`;
 
 	return (
-		<div>
-			<section>
-				<p>{product.name}</p>
-				<p>{product.photo}</p>
-				<p>{product.description}</p>
-				<p>{product.price}</p>
-			</section>
-			<Link to={`/products`}>
-				<button>Back</button>
-			</Link>
-			<Link to={editProductURL}>
-				<button>Edit</button>
-			</Link>
-			<button onClick={handleDelete}>Delete</button>
-		</div>
+		<>
+			<div class="row row-cols-1 row-cols-sm-2 g-3">
+				<div class="col">
+					<div class="card">
+						<div class="card-header">header</div>
+						<div class="card-body">
+							<h5 class="card-title">{product.name}</h5>
+							<p>{product.photo}</p>
+							<p class="card-text">{product.description}</p>
+						</div>
+						<div class="card-footer text-muted">${product.price}</div>
+						<div
+							class="btn-toolbar"
+							role="toolbar"
+							aria-label="Toolbar with button groups"
+						>
+							<div class="btn-group me-2" role="group" aria-label="First group">
+								<Link to={editProductURL}>
+									<button type="button" class="btn btn-primary">
+										Edit
+									</button>
+								</Link>
+							</div>
+							<div
+								class="btn-group me-2"
+								role="group"
+								aria-label="Second group"
+							>
+								<Link to={`/products`}>
+									<button type="button" class="btn btn-primary">
+										Back
+									</button>
+								</Link>
+							</div>
+							<div class="btn-group" role="group" aria-label="Third group">
+								<button
+									onClick={handleDelete}
+									type="button"
+									class="btn btn-primary"
+								>
+									Delete
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 
