@@ -9,7 +9,7 @@ const ProductListItem = ({ product }) => {
         </Link>
       </td>
       <td>
-        <img src={product.photo} alt="sneakers" />
+        <img src={product.photo} alt="sneakers" class="img-thumbnail" />
       </td>
       <td>{product.description}</td>
       <td>${product.price}</td>

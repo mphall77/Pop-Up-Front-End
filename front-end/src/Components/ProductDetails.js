@@ -46,7 +46,7 @@ const ProductDetails = () => {
 						<div class="card-header">header</div>
 						<div class="card-body">
 							<h5 class="card-title">{product.name}</h5>
-							<img src={product.photo} /> 
+							<img src={product.photo} class="img-thumbnail" alt="sneakers"/> 
 							{/* <p>{product.photo}</p> */}
 							<p class="card-text">{product.description}</p>
 						</div>
