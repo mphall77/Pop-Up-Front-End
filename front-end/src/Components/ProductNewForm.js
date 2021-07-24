@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, withRouter } from "react-router-dom";
 
 import { apiURL } from "../util/apiURL.js";
 const API = apiURL();
@@ -12,12 +12,12 @@ const ProductNewForm = () => {
 		name: "",
 		photo: "",
 		description: "",
-		price: "",
+		price: 0,
 	});
 
 	const addProduct = async (newProduct) => {
 		try {
-			await axios.post(`${API}/products, newProduct`);
+			await axios.post(`${API}/products`, newProduct);
 			history.push(`/products`);
 		} catch (err) {
 			console.log(err);
@@ -25,7 +25,7 @@ const ProductNewForm = () => {
 	};
 
 	const handleTextChange = (e) => {
-		setProduct({ ...product, [e.target.name]: e.target.value });
+		setProduct({ ...product, [e.target.id]: e.target.value });
 	};
 
 	const handleSubmit = (e) => {
@@ -40,6 +40,7 @@ const ProductNewForm = () => {
 					Product:
 					<input
 						type="text"
+						id="name"
 						name="name"
 						value={product.name}
 						onChange={handleTextChange}
@@ -50,6 +51,7 @@ const ProductNewForm = () => {
 					Photo:
 					<input
 						type="text"
+						id="photo"
 						name="photo"
 						value={product.photo}
 						onChange={handleTextChange}
@@ -60,6 +62,7 @@ const ProductNewForm = () => {
 					Description:
 					<textarea
 						type="text"
+						id="description"
 						name="description"
 						value={product.description}
 						onChange={handleTextChange}
@@ -70,6 +73,7 @@ const ProductNewForm = () => {
 					Price:
 					<input
 						type="number"
+						id="price"
 						name="price"
 						value={product.price}
 						onChange={handleTextChange}
@@ -87,4 +91,4 @@ const ProductNewForm = () => {
 	);
 };
 
-export default ProductNewForm;
+export default withRouter(ProductNewForm);

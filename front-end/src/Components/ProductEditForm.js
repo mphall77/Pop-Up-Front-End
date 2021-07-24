@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-
+import { useParams, useHistory, withRouter } from "react-router-dom";
 import { apiURL } from "../util/apiURL";
-const API = apiURL();
 
 const ProductEditForm = () => {
+	const API = apiURL();
 	const { id } = useParams();
 	let history = useHistory();
 
@@ -17,16 +16,16 @@ const ProductEditForm = () => {
 	});
 
 	const handleTextChange = (e) => {
-		setSelectedProduct({ ...selectedProduct, [e.target.name]: e.target.value });
+		setSelectedProduct({ ...selectedProduct, [e.target.id]: e.target.value });
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const updatedProduct = await updateProduct(selectedProduct, id);
+		updateProduct(selectedProduct);
 		history.push(`/products/${id}`);
 	};
 
-	const updateProduct = async (productToEdit, id) => {
+	const updateProduct = async (productToEdit) => {
 		try {
 			await axios.put(`${API}/products/${id}`, productToEdit);
 		} catch (err) {
@@ -45,7 +44,7 @@ const ProductEditForm = () => {
 
 	useEffect(() => {
 		fetchProductToEdit();
-	}, [id]);
+	}, [id, history, API]);
 
 	return (
 		<section>
@@ -54,6 +53,7 @@ const ProductEditForm = () => {
 					Product:
 					<input
 						type="text"
+						id="name"
 						name="name"
 						value={selectedProduct.name}
 						onChange={handleTextChange}
@@ -63,6 +63,7 @@ const ProductEditForm = () => {
 					Photo:
 					<input
 						type="text"
+						id="photo"
 						name="photo"
 						value={selectedProduct.photo}
 						onChange={handleTextChange}
@@ -72,20 +73,21 @@ const ProductEditForm = () => {
 					Description:
 					<input
 						type="text"
+						id="description"
 						name="description"
 						value={selectedProduct.description}
 						onChange={handleTextChange}
-						placeholder="Album"
+						placeholder="description"
 					/>
 				</label>
 				<label>
 					Price:
 					<input
 						type="number"
+						id="price"
 						name="price"
 						value={selectedProduct.price}
 						onChange={handleTextChange}
-						required
 					/>
 				</label>
 
@@ -98,4 +100,4 @@ const ProductEditForm = () => {
 	);
 };
 
-export default ProductEditForm;
+export default withRouter(ProductEditForm);
