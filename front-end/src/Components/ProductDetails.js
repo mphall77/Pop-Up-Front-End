@@ -50,6 +50,8 @@ const ProductDetails = () => {
 							<p class="card-text">{product.description}</p>
 						</div>
 						<div class="card-footer text-muted">${product.price}</div>
+
+						{/* BUTTONS */}
 						<div
 							class="btn-toolbar"
 							role="toolbar"
