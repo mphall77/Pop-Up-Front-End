@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 
 import { apiURL } from "../util/apiURL";
 const API = apiURL();
@@ -8,6 +8,7 @@ const API = apiURL();
 const ProductDetails = () => {
 	const [product, setProduct] = useState({});
 	let { id } = useParams();
+	let history = useHistory();
 
 	const fetchProduct = async () => {
 		try {
@@ -18,10 +19,25 @@ const ProductDetails = () => {
 			console.log(err);
 		}
 	};
+	const deleteProduct = async () => {
+		try {
+		  await axios.delete(`${API}/products/${id}`);
+		} catch (err) {
+		  console.log(err)
+		}
+	  };
 
 	useEffect(() => {
 		fetchProduct();
 	}, [id]);
+
+	
+
+	  const handleDelete = () => {
+		deleteProduct();
+		history.push('/products')
+		
+	  } 
 
 	const editProductURL = `/products/${id}/edit`;
 
@@ -39,8 +55,7 @@ const ProductDetails = () => {
 			<Link to={editProductURL}>
 				<button>Edit</button>
 			</Link>
-
-			<button>Delete</button>
+			<button onClick={handleDelete}>Delete</button>
 		</div>
 	);
 };
