@@ -1,4 +1,5 @@
 import { Switch, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import axios from "axios";
 // import { useState, useEffect } from "react";
 // import "./app.css";
