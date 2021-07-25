@@ -21,7 +21,18 @@ const ProductsList = () => {
 	}, []);
 
 	return (
-		<div>
+		<div class="row row-cols-1 row-cols-sm-2 g-3">
+			{products.map((product) => {
+				return <ProductListItem key={product.id} product={product} />;
+			})}
+		</div>
+	);
+};
+
+export default ProductsList;
+
+{
+	/* <div>
 			<section>
 				<table class="table table-striped">
 					<thead scope="row">
@@ -39,8 +50,5 @@ const ProductsList = () => {
 					</tbody>
 				</table>
 			</section>
-		</div>
-	);
-};
-
-export default ProductsList;
+		</div> */
+}

@@ -34,7 +34,7 @@ const ProductNewForm = () => {
 	};
 
 	return (
-		<section>
+		<section class="card">
 			<form onSubmit={handleSubmit}>
 				<Form.Group as={Row} className="mb-3" controlId="formHorizontalProduct">
 					<Form.Label column sm={2}>
