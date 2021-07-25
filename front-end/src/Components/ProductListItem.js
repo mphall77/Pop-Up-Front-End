@@ -16,7 +16,7 @@ const ProductListItem = ({ product }) => {
 					<p class="card-text">{product.description} </p>
 				</div>
 				<div class="card-footer">
-					<small class="text-muted"> {product.price}</small>
+					<small class="text-muted"> ${product.price}</small>
 				</div>
 			</div>
 		</div>
