@@ -10,15 +10,6 @@ const ProductDetails = () => {
 	let { id } = useParams();
 	let history = useHistory();
 
-	const fetchProduct = async () => {
-		try {
-			const res = await axios.get(`${API}/products/${id}`);
-
-			setProduct(res.data.payload);
-		} catch (err) {
-			console.log(err);
-		}
-	};
 	const deleteProduct = async () => {
 		try {
 			await axios.delete(`${API}/products/${id}`);
@@ -28,6 +19,15 @@ const ProductDetails = () => {
 	};
 
 	useEffect(() => {
+		const fetchProduct = async () => {
+			try {
+				const res = await axios.get(`${API}/products/${id}`);
+
+				setProduct(res.data.payload);
+			} catch (err) {
+				console.log(err);
+			}
+		};
 		fetchProduct();
 	}, [id]);
 
@@ -46,7 +46,7 @@ const ProductDetails = () => {
 						<div class="card-header">header</div>
 						<div class="card-body">
 							<h5 class="card-title">{product.name}</h5>
-							<img src={product.photo} class="img-thumbnail" alt="sneakers"/> 
+							<img src={product.photo} class="img-thumbnail" alt="sneakers" />
 							{/* <p>{product.photo}</p> */}
 							<p class="card-text">{product.description}</p>
 						</div>

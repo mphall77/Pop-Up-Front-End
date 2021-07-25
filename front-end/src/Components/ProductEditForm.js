@@ -34,18 +34,18 @@ const ProductEditForm = () => {
 		}
 	};
 
-	const fetchProductToEdit = async () => {
-		try {
-			const res = await axios.get(`${API}/products/${id}`);
-			setSelectedProduct(res.data.payload);
-		} catch (err) {
-			console.log(err);
-		}
-	};
-
 	useEffect(() => {
+		const fetchProductToEdit = async () => {
+			try {
+				const res = await axios.get(`${API}/products/${id}`);
+				setSelectedProduct(res.data.payload);
+			} catch (err) {
+				console.log(err);
+			}
+		};
 		fetchProductToEdit();
 	}, [id, history, API]);
+
 	return (
 		<section>
 			<form onSubmit={handleSubmit}>

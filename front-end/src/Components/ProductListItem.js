@@ -8,7 +8,7 @@ const ProductListItem = ({ product }) => {
 					<img
 						src={product.photo}
 						class="card-img-top product-img"
-						alt="card-group-image"
+						alt="card-group"
 					/>
 				</Link>
 				<div class="card-body product-desc">
