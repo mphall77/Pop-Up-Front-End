@@ -30,25 +30,3 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
-
-{
-	/* <div>
-			<section>
-				<table class="table table-striped">
-					<thead scope="row">
-						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Photo</th>
-							<th scope="col">Description</th>
-							<th scope="col">Price</th>
-						</tr>
-					</thead>
-					<tbody>
-						{products.map((product) => {
-							return <ProductListItem key={product.id} product={product} />;
-						})}
-					</tbody>
-				</table>
-			</section>
-		</div> */
-}

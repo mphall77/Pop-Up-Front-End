@@ -12,10 +12,15 @@ code {
 		monospace;
 }
 
-.card > img {
+/* .product-img {
 	height: 200px;
+} */
+
+.product-desc {
+	height: 250px;
 }
 
-.card > .card-body {
-	height: 250px;
+nav {
+	background-color: slategrey;
+	height: 10vh;
 }
