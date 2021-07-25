@@ -4,8 +4,14 @@ const ProductListItem = ({ product }) => {
 	return (
 		<div class="col">
 			<div class="card">
-				<img src={product.photo} class="card-img-top" alt="card-group-image" />
-				<div class="card-body">
+				<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
+					<img
+						src={product.photo}
+						class="card-img-top product-img"
+						alt="card-group-image"
+					/>
+				</Link>
+				<div class="card-body product-desc">
 					<h5 class="card-title">{product.name}</h5>
 					<p class="card-text">{product.description} </p>
 				</div>
@@ -18,18 +24,3 @@ const ProductListItem = ({ product }) => {
 };
 
 export default ProductListItem;
-
-{
-	/* <tr>
-      <td>
-        <Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
-          {product.name}
-        </Link>
-      </td>
-      <td>
-        <img src={product.photo} alt="sneakers" class="img-thumbnail" />
-      </td>
-      <td>{product.description}</td>
-      <td>${product.price}</td>
-    </tr> */
-}
