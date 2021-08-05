@@ -5,7 +5,7 @@ const ProductListItem = ({ product }) => {
 		<div class="col">
 			<div class="card">
 				<div className="card-parent">
-					<Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
+					<Link to={`/products/${product.id}`} rel="noreferrer">
 						<img
 							src={product.photo}
 							class="card-img-top product-img"
