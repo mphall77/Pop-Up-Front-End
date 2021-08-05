@@ -34,7 +34,7 @@ const ProductNewForm = () => {
 	};
 
 	return (
-		<section class="card">
+		<section className="card">
 			<form onSubmit={handleSubmit}>
 				<Form.Group as={Row} className="mb-3">
 					<Form.Label htmlFor="name" column sm={2}>
@@ -93,18 +93,18 @@ const ProductNewForm = () => {
 					</Col>
 				</Form.Group>
 				<div
-					class="btn-toolbar"
+					className="btn-toolbar"
 					role="toolbar"
 					aria-label="Toolbar with button groups"
 				></div>
-				<div class="btn-group me-2" role="group" aria-label="Second group">
+				<div className="btn-group me-2" role="group" aria-label="Second group">
 					<Form.Group as={Row} className="mb-3">
 						<Col sm={{ span: 10, offset: 11 }}>
 							<Button type="submit">Back</Button>
 						</Col>
 					</Form.Group>
 				</div>
-				<div class="btn-group me-2" role="group" aria-label="First group">
+				<div className="btn-group me-2" role="group" aria-label="First group">
 					<Form.Group as={Row} className="mb-3">
 						<Col sm={{ span: 10, offset: 10 }}>
 							<Button type="submit">Submit</Button>

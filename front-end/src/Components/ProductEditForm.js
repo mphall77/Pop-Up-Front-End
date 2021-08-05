@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useHistory, withRouter, Link } from "react-router-dom";
+import { useParams, useHistory, withRouter } from "react-router-dom";
 import { Form, Col, Button, Row } from "react-bootstrap";
 import { apiURL } from "../util/apiURL";
 
@@ -106,18 +106,18 @@ const ProductEditForm = () => {
 					</Col>
 				</Form.Group>
 				<div
-					class="btn-toolbar"
+					className="btn-toolbar"
 					role="toolbar"
 					aria-label="Toolbar with button groups"
 				></div>
-				<div class="btn-group me-2" role="group" aria-label="Second group">
+				<div className="btn-group me-2" role="group" aria-label="Second group">
 					<Form.Group as={Row} className="mb-3">
 						<Col sm={{ span: 10, offset: 11 }}>
 							<Button>Back</Button>
 						</Col>
 					</Form.Group>
 				</div>
-				<div class="btn-group me-2" role="group" aria-label="First group">
+				<div className="btn-group me-2" role="group" aria-label="First group">
 					<Form.Group as={Row} className="mb-3">
 						<Col sm={{ span: 10, offset: 10 }}>
 							<Button type="submit">Submit</Button>
