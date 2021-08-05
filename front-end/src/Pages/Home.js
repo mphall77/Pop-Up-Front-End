@@ -5,7 +5,7 @@ export default function Home() {
 		<div>
 			<h1>Welcome to the Pop-Up Shop!</h1>
 			<Link to="/products">
-				<button type="button" class="btn btn-primary">
+				<button type="button" className="btn btn-primary">
 					Enter the Shop
 				</button>
 			</Link>

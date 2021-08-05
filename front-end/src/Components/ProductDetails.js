@@ -40,47 +40,55 @@ const ProductDetails = () => {
 
 	return (
 		<>
-			<div class="row row-cols-1 row-cols-sm-2 g-3">
-				<div class="col">
-					<div class="card">
-						<div class="card-header">header</div>
-						<div class="card-body">
-							<h5 class="card-title">{product.name}</h5>
-							<img src={product.photo} class="img-thumbnail" alt="sneakers" />
+			<div className="row row-cols-1 row-cols-sm-2 g-3">
+				<div className="col">
+					<div className="card">
+						<div className="card-header">header</div>
+						<div className="card-body">
+							<h5 className="card-title">{product.name}</h5>
+							<img
+								src={product.photo}
+								className="img-thumbnail"
+								alt="sneakers"
+							/>
 							{/* <p>{product.photo}</p> */}
-							<p class="card-text">{product.description}</p>
+							<p className="card-text">{product.description}</p>
 						</div>
-						<div class="card-footer text-muted">${product.price}</div>
+						<div className="card-footer text-muted">${product.price}</div>
 
 						{/* BUTTONS */}
 						<div
-							class="btn-toolbar"
+							className="btn-toolbar"
 							role="toolbar"
 							aria-label="Toolbar with button groups"
 						>
-							<div class="btn-group me-2" role="group" aria-label="First group">
+							<div
+								className="btn-group me-2"
+								role="group"
+								aria-label="First group"
+							>
 								<Link to={editProductURL}>
-									<button type="button" class="btn btn-primary">
+									<button type="button" className="btn btn-primary">
 										Edit
 									</button>
 								</Link>
 							</div>
 							<div
-								class="btn-group me-2"
+								className="btn-group me-2"
 								role="group"
 								aria-label="Second group"
 							>
 								<Link to={`/products`}>
-									<button type="button" class="btn btn-primary">
+									<button type="button" className="btn btn-primary">
 										Back
 									</button>
 								</Link>
 							</div>
-							<div class="btn-group" role="group" aria-label="Third group">
+							<div className="btn-group" role="group" aria-label="Third group">
 								<button
 									onClick={handleDelete}
 									type="button"
-									class="btn btn-primary"
+									className="btn btn-primary"
 								>
 									Delete
 								</button>
