@@ -5,9 +5,11 @@ export default function NavBar() {
 		<nav>
 			<h1>
 				<Link to="/products/new">
-					<button type="button" class="btn btn-primary">
+					<div className="navbut">
+					<button type="button" class="btn btn-outline-dark">
 						Add New Product
 					</button>
+					</div>
 				</Link>
 			</h1>
 		</nav>

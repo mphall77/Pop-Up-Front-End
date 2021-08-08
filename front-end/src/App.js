@@ -38,6 +38,7 @@ function App() {
 					<Edit />
 				</Route>
 			</Switch>
+			<h1 className="title">Welcome to the Pop-Up Shop</h1>
 		</div>
 	);
 }
