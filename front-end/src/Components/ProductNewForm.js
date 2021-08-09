@@ -34,10 +34,10 @@ const ProductNewForm = () => {
 	};
 
 	return (
-		<section class="card">
+		<section className="card">
 			<form onSubmit={handleSubmit}>
-				<Form.Group as={Row} className="mb-3" controlId="formHorizontalProduct">
-					<Form.Label column sm={2}>
+				<Form.Group as={Row} className="mb-3">
+					<Form.Label htmlFor="name" column sm={2}>
 						Product
 					</Form.Label>
 					<Col sm={10}>
@@ -50,8 +50,8 @@ const ProductNewForm = () => {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} className="mb-3" controlId="formHorizontalPhoto">
-					<Form.Label column sm={2}>
+				<Form.Group as={Row} className="mb-3">
+					<Form.Label htmlFor="photo" column sm={2}>
 						Photo
 					</Form.Label>
 					<Col sm={10}>
@@ -64,12 +64,8 @@ const ProductNewForm = () => {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group
-					as={Row}
-					className="mb-3"
-					controlId="formHorizontalDescription"
-				>
-					<Form.Label column sm={2}>
+				<Form.Group as={Row} className="mb-3">
+					<Form.Label htmlFor="description" column sm={2}>
 						Description
 					</Form.Label>
 					<Col sm={10}>
@@ -82,8 +78,8 @@ const ProductNewForm = () => {
 						/>
 					</Col>
 				</Form.Group>
-				<Form.Group as={Row} className="mb-3" controlId="formHorizontalPrice">
-					<Form.Label column sm={2}>
+				<Form.Group as={Row} className="mb-3">
+					<Form.Label htmlFor="price" column sm={2}>
 						Price
 					</Form.Label>
 					<Col sm={10}>
@@ -97,21 +93,21 @@ const ProductNewForm = () => {
 					</Col>
 				</Form.Group>
 				<div
-					class="btn-toolbar"
+					className="btn-toolbar"
 					role="toolbar"
 					aria-label="Toolbar with button groups"
 				></div>
-				<div class="btn-group me-2" role="group" aria-label="First group">
-					<Form.Group as={Row} className="mb-3">
-						<Col sm={{ span: 10, offset: 10 }}>
-							<Button type="submit">Submit</Button>
-						</Col>
-					</Form.Group>
-				</div>
-				<div class="btn-group me-2" role="group" aria-label="Second group">
+				<div className="btn-group me-2" role="group" aria-label="Second group">
 					<Form.Group as={Row} className="mb-3">
 						<Col sm={{ span: 10, offset: 11 }}>
 							<Button type="submit">Back</Button>
+						</Col>
+					</Form.Group>
+				</div>
+				<div className="btn-group me-2" role="group" aria-label="First group">
+					<Form.Group as={Row} className="mb-3">
+						<Col sm={{ span: 10, offset: 10 }}>
+							<Button type="submit">Submit</Button>
 						</Col>
 					</Form.Group>
 				</div>
