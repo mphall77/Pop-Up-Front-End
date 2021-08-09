@@ -2,15 +2,23 @@ import { Link } from "react-router-dom";
 
 const ProductListItem = ({ product }) => {
 	return (
-		<div class="col">
-			<div class="card">
-				<img src={product.photo} class="card-img-top" alt="card-group-image" />
-				<div class="card-body">
-					<h5 class="card-title">{product.name}</h5>
-					<p class="card-text">{product.description} </p>
+		<div className="col">
+			<div className="card">
+				<div className="card-parent">
+					<Link to={`/products/${product.id}`} rel="noreferrer">
+						<img
+							src={product.photo}
+							className="card-img-top product-img"
+							alt="card-group"
+						/>
+					</Link>
 				</div>
-				<div class="card-footer">
-					<small class="text-muted"> {product.price}</small>
+				<div className="card-body product-desc">
+					<h5 className="card-title">{product.name}</h5>
+					<p className="card-text">{product.description} </p>
+				</div>
+				<div className="card-footer">
+					<small className="text-muted"> ${product.price}</small>
 				</div>
 			</div>
 		</div>
@@ -18,18 +26,3 @@ const ProductListItem = ({ product }) => {
 };
 
 export default ProductListItem;
-
-{
-	/* <tr>
-      <td>
-        <Link to={`/products/${product.id}`} target="_blank" rel="noreferrer">
-          {product.name}
-        </Link>
-      </td>
-      <td>
-        <img src={product.photo} alt="sneakers" class="img-thumbnail" />
-      </td>
-      <td>{product.description}</td>
-      <td>${product.price}</td>
-    </tr> */
-}

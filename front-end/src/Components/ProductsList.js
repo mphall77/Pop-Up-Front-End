@@ -7,6 +7,7 @@ const API = apiURL();
 const ProductsList = () => {
 	const [products, setProducts] = useState([]);
 
+	console.log("API", API);
 	const fetchProducts = async () => {
 		try {
 			const res = await axios.get(`${API}/products`);
@@ -21,7 +22,7 @@ const ProductsList = () => {
 	}, []);
 
 	return (
-		<div class="row row-cols-1 row-cols-sm-2 g-3">
+		<div className="row row-cols-1 row-cols-sm-2 g-3">
 			{products.map((product) => {
 				return <ProductListItem key={product.id} product={product} />;
 			})}
@@ -30,25 +31,3 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
-
-{
-	/* <div>
-			<section>
-				<table class="table table-striped">
-					<thead scope="row">
-						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Photo</th>
-							<th scope="col">Description</th>
-							<th scope="col">Price</th>
-						</tr>
-					</thead>
-					<tbody>
-						{products.map((product) => {
-							return <ProductListItem key={product.id} product={product} />;
-						})}
-					</tbody>
-				</table>
-			</section>
-		</div> */
-}

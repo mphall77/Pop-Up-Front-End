@@ -1,8 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import "./app.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 //components
 import NavBar from "./Components/NavBar";
@@ -13,9 +10,6 @@ import Show from "./Pages/Show";
 import Index from "./Pages/Index";
 import Edit from "./Pages/Edit";
 import New from "./Pages/New";
-
-// import { apiURL } from "./util/apiURL.js";
-// const API = apiURL();
 
 function App() {
 	return (
@@ -38,7 +32,6 @@ function App() {
 					<Edit />
 				</Route>
 			</Switch>
-			<h1 className="title">Welcome to the Pop-Up Shop</h1>
 		</div>
 	);
 }
