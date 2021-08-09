@@ -7,6 +7,7 @@ const API = apiURL();
 const ProductsList = () => {
 	const [products, setProducts] = useState([]);
 
+	console.log("API", API);
 	const fetchProducts = async () => {
 		try {
 			const res = await axios.get(`${API}/products`);
