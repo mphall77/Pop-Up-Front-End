@@ -34,13 +34,13 @@ const ProductNewForm = () => {
 	};
 
 	return (
-		<section className="card">
-			<form onSubmit={handleSubmit}>
+		<section>
+			<form className="productform" onSubmit={handleSubmit}>
 				<Form.Group as={Row} className="mb-3">
 					<Form.Label htmlFor="name" column sm={2}>
 						Product
 					</Form.Label>
-					<Col sm={10}>
+					<Col sm={3}>
 						<Form.Control
 							type="text"
 							id="name"
@@ -54,7 +54,7 @@ const ProductNewForm = () => {
 					<Form.Label htmlFor="photo" column sm={2}>
 						Photo
 					</Form.Label>
-					<Col sm={10}>
+					<Col sm={3}>
 						<Form.Control
 							type="text"
 							id="photo"
@@ -68,7 +68,7 @@ const ProductNewForm = () => {
 					<Form.Label htmlFor="description" column sm={2}>
 						Description
 					</Form.Label>
-					<Col sm={10}>
+					<Col sm={3}>
 						<Form.Control
 							type="text"
 							id="description"
@@ -82,7 +82,7 @@ const ProductNewForm = () => {
 					<Form.Label htmlFor="price" column sm={2}>
 						Price
 					</Form.Label>
-					<Col sm={10}>
+					<Col sm={3}>
 						<Form.Control
 							type="number"
 							id="price"
