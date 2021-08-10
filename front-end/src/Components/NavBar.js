@@ -6,7 +6,7 @@ export default function NavBar() {
 		<h2>
 			<Navbar bg="dark" variant="dark">
 				<Container>
-					<Navbar.Brand href="#home">PopUpShop</Navbar.Brand>
+					<Navbar.Brand>PopUpShop</Navbar.Brand>
 					<Nav className="me-auto">
 						<Nav.Link href="/">Home</Nav.Link>
 						<Nav.Link href="/products">Products</Nav.Link>
