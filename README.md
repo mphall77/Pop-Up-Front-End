@@ -30,10 +30,10 @@ https://github.com/itsanasna/Pop-up-Shop-Back-end
 
 #Creators
 
-Anas Nahil
-Carlos Hidalgo
-Marsha Hall
-Vanessa Watson
+Anas Nahil,
+Carlos Hidalgo,
+Marsha Hall,
+Vanessa Watson,
 
 
 # PERN Final Project Template
